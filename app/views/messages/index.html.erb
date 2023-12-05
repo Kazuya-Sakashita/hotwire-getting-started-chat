@@ -1,7 +1,7 @@
 <div class="messages-index">
-  <div class="messages-index-body">
+  <%= turbo_frame_tag 'messages', class: 'messages-index-body' do %>
     <%= render partial: 'message', collection: @messages %>
-  </div>
+  <% end %>
 
   <%= turbo_frame_tag Message.new, clss: 'messages-index__footer' do %>
     <div class="messages-index__footer">
