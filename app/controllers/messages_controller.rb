@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
 
   def destroy
     @message.destroy!
-    redirect_to messages_path
+    flash.now[:alert] = '削除しました'
   end
 
   private
