@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :set_message, only: %i(edit update destroy)
+  before_action :set_message, only: %i[edit update destroy]
 
   def index
     @messages = Message.order(:id)
@@ -14,18 +14,17 @@ class MessagesController < ApplicationController
     if @message.save
       flash.now[:notice] = '作成しました'
     else
-      render :new, status: :unprocessable_entity
+      render(:new, status: :unprocessable_entity)
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @message.update(message_params)
       flash.now[:notice] = '更新しました'
     else
-      render :edit, status: :unprocessable_entity
+      render(:edit, status: :unprocessable_entity)
     end
   end
 

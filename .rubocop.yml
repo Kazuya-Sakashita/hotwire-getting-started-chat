@@ -1,0 +1,68 @@
+# ルールのバージョンを指定
+require: rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Enabled: true
+  Exclude:
+    - "db/schema.rb"
+    - "config/**/*"
+    - "bin/*"
+    - "node_modules/**/*"
+  TargetRubyVersion: 3.2
+  TargetRailsVersion: 7.0 # Railsを使用している場合はこちらも指定
+
+# 文字列リテラルの引用符の一貫性
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes # シングルクォートを強制
+
+# ドキュメンテーションコメント
+Style/Documentation:
+  Enabled: false
+
+# メソッドの長さ制限
+Metrics/MethodLength:
+  Enabled: true
+  Max: 15
+
+# クラスの長さ制限
+Metrics/ClassLength:
+  Enabled: true
+  Max: 100
+
+# 行長制限
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+
+# ブロックの長さ制限
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - "config/routes.rb"
+    - "config/initializers/**/*.rb"
+    - "spec/**/*.rb"
+
+# メソッド呼び出しの括弧
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+
+# ハッシュリテラルのスタイル
+Style/HashSyntax:
+  Enabled: true
+  EnforcedStyle: ruby19_no_mixed_keys
+
+# インデントのスタイル
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+# 空白行の使用
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# ファイルの最後に空行を強制
+Layout/TrailingEmptyLines:
+  Enabled: true
+  EnforcedStyle: final_newline

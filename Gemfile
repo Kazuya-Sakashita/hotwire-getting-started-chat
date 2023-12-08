@@ -58,3 +58,8 @@ group :development do
   # gem "spring"
 end
 
+
+gem 'faker'
+
+gem 'rubocop', require: false
+gem 'rubocop-performance'
